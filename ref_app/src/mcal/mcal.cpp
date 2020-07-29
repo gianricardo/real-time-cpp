@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-//  Copyright Christopher Kormanyos 2007 - 2014.
+//  Copyright Christopher Kormanyos 2007 - 2019.
 //  Distributed under the Boost Software License,
 //  Version 1.0. (See accompanying file LICENSE_1_0.txt
 //  or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -25,4 +25,6 @@ void mcal::init()
   mcal::pwm::init(nullptr);
 
   mcal::cpu::post_init();
+
+  mcal::eep::init(nullptr);
 }

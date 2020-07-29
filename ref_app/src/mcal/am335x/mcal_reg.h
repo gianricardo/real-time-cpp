@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-//  Copyright Christopher Kormanyos 2013.
+//  Copyright Christopher Kormanyos 2013 - 2020.
 //  Copyright Michael Schnerr 2011 - 2013.
 //  Distributed under the Boost Software License,
 //  Version 1.0. (See accompanying file LICENSE_1_0.txt
@@ -660,5 +660,8 @@
       }
     }
   }
+
+  #include <mcal/mcal_reg_access_dynamic.h>
+  #include <mcal/mcal_reg_access_static.h>
 
 #endif // MCAL_REG_2010_04_10_H_

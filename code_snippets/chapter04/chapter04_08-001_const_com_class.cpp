@@ -11,10 +11,17 @@
 #include <iomanip>
 #include <iostream>
 
-#define __attribute__(a)
+#define __attribute__(attr)
 
-static std::uint8_t dummy_register_tbuf;
-static std::uint8_t dummy_register_rbuf;
+namespace mcal
+{
+  namespace reg
+  {
+    // Simulate the transmit and receive hardware buffers on the PC.
+    std::uint8_t dummy_register_tbuf;
+    std::uint8_t dummy_register_rbuf;
+  }
+}
 
 extern "C"
 void com_recv_isr() __attribute__((interrupt));
@@ -29,7 +36,8 @@ public:
 
   bool send_byte(const std::uint8_t by) const
   {
-    *reinterpret_cast<std::uint8_t*>(tbuf) = by;
+    // Transmit the byte.
+    *tbuf = by;
 
     return true;
   }
@@ -42,6 +50,8 @@ public:
     {
       has_recv = false;
 
+      recv_buf = *rbuf;
+
       return recv_buf;
     }
 
@@ -49,28 +59,28 @@ public:
   }
 
 private:
-  static constexpr std::uint8_t* tbuf = &dummy_register_tbuf;
-  static constexpr std::uint8_t* rbuf = &dummy_register_rbuf;
+  static constexpr std::uint8_t* tbuf = reinterpret_cast<std::uint8_t*>(&mcal::reg::dummy_register_tbuf);
+  static constexpr std::uint8_t* rbuf = reinterpret_cast<std::uint8_t*>(&mcal::reg::dummy_register_rbuf);
 
   std::uint8_t recv_buf;
   bool has_recv;
 
   communication(const communication&) = delete;
-  const communication& operator=(const communication&)
-    = delete;
+
+  const communication& operator=(const communication&) = delete;
 
   friend void com_recv_isr();
 };
 
-bool wakeup(const communication& com)
+bool wakeup(const communication& com) // Emohasize: com is a comst reference.
 {
-  // OK. Call a const member of a const reference.
+  // Call the const send_byte function on a const reference.
   return com.send_byte(0x12U);
 }
 
 namespace
 {
-  // A constantt communication instance.
+  // Instantiate a constant communication instance.
   const communication com;
 }
 

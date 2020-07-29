@@ -76,15 +76,6 @@
     <Filter Include="micros\rx63n\startup">
       <UniqueIdentifier>{145ad14c-97bb-4f35-b080-b38e0b3694be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="micros\pic32mx795fx">
-      <UniqueIdentifier>{07c0fd40-d9f8-40c7-a363-c7bac2234b3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="micros\pic32mx795fx\make">
-      <UniqueIdentifier>{2a5d7844-e062-45e6-8369-554fb830cf6c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="micros\pic32mx795fx\startup">
-      <UniqueIdentifier>{233d3e07-73e6-456c-ad85-eee1754c294b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="micros\bcm2835_raspi_b">
       <UniqueIdentifier>{4041bfb9-b914-4b7c-a460-4ea024a343cc}</UniqueIdentifier>
     </Filter>
@@ -111,6 +102,51 @@
     </Filter>
     <Filter Include="micros\atmega2560\startup">
       <UniqueIdentifier>{655b96de-d2f6-4ab9-9e37-a70ae26780a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\stm32f446">
+      <UniqueIdentifier>{376a5280-1115-42a7-897d-7f7f3bf57527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\stm32f446\make">
+      <UniqueIdentifier>{7b2f1611-c60a-45cd-8045-db18a9dcfed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\stm32f446\startup">
+      <UniqueIdentifier>{a80ed04d-f118-4417-82bb-954d4a5faf28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\xtensa32">
+      <UniqueIdentifier>{07f4f72b-d45f-439f-880d-6756cb21b73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\xtensa32\startup">
+      <UniqueIdentifier>{53e83863-577c-4d22-8e58-93f6c9f2c1f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\lpc11c24">
+      <UniqueIdentifier>{1bcdbfbf-86cd-4aee-ae23-4d7d5ed9cad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\lpc11c24\make">
+      <UniqueIdentifier>{1118c3fd-f0c2-4520-aaec-d3e3371c90aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\lpc11c24\startup">
+      <UniqueIdentifier>{3f300f03-33a2-470e-928e-dc620fd5485f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\x86_64-w64-mingw32">
+      <UniqueIdentifier>{73125d5a-08cb-4db7-906c-eec7d4cdb72f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\x86_64-w64-mingw32\make">
+      <UniqueIdentifier>{b8efd83a-7cd5-4ba7-82b4-763bdc2c567f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\x86_64-w64-mingw32\startup">
+      <UniqueIdentifier>{80cb37c7-9856-4bf9-8bc4-2b91611ab9f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\xtensa32\make">
+      <UniqueIdentifier>{dd0fe2a6-0b42-4cee-a106-84f66171e078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\stm32l100c">
+      <UniqueIdentifier>{0399d925-ef3d-49da-b726-10b72de92f18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\stm32l100c\make">
+      <UniqueIdentifier>{2c2a4e67-a3d2-495c-a5c3-41d7ce86329e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="micros\stm32l100c\startup">
+      <UniqueIdentifier>{99d996cc-6d36-4b80-b627-519672f5e94f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -198,15 +234,6 @@
     <None Include="target\micros\rx63n\make\rx63n_flags.gmk">
       <Filter>micros\rx63n\make</Filter>
     </None>
-    <None Include="target\micros\pic32mx795fx\make\pic32mx795fx.ld">
-      <Filter>micros\pic32mx795fx\make</Filter>
-    </None>
-    <None Include="target\micros\pic32mx795fx\make\pic32mx795fx_files.gmk">
-      <Filter>micros\pic32mx795fx\make</Filter>
-    </None>
-    <None Include="target\micros\pic32mx795fx\make\pic32mx795fx_flags.gmk">
-      <Filter>micros\pic32mx795fx\make</Filter>
-    </None>
     <None Include="target\micros\bcm2835_raspi_b\make\bcm2835_raspi_b.ld">
       <Filter>micros\bcm2835_raspi_b\make</Filter>
     </None>
@@ -242,6 +269,51 @@
     </None>
     <None Include="target\micros\atmega2560\make\atmega2560_flags.gmk">
       <Filter>micros\atmega2560\make</Filter>
+    </None>
+    <None Include="target\micros\stm32f446\make\stm32f446.ld">
+      <Filter>micros\stm32f446\make</Filter>
+    </None>
+    <None Include="target\micros\stm32f446\make\stm32f446_files.gmk">
+      <Filter>micros\stm32f446\make</Filter>
+    </None>
+    <None Include="target\micros\stm32f446\make\stm32f446_flags.gmk">
+      <Filter>micros\stm32f446\make</Filter>
+    </None>
+    <None Include="target\micros\xtensa32\make\xtensa32.ld">
+      <Filter>micros\xtensa32\make</Filter>
+    </None>
+    <None Include="target\micros\xtensa32\make\xtensa32_files.gmk">
+      <Filter>micros\xtensa32\make</Filter>
+    </None>
+    <None Include="target\micros\xtensa32\make\xtensa32_flags.gmk">
+      <Filter>micros\xtensa32\make</Filter>
+    </None>
+    <None Include="target\micros\lpc11c24\make\lpc11c24.ld">
+      <Filter>micros\lpc11c24\make</Filter>
+    </None>
+    <None Include="target\micros\lpc11c24\make\lpc11c24_files.gmk">
+      <Filter>micros\lpc11c24\make</Filter>
+    </None>
+    <None Include="target\micros\lpc11c24\make\lpc11c24_flags.gmk">
+      <Filter>micros\lpc11c24\make</Filter>
+    </None>
+    <None Include="target\micros\x86_64-w64-mingw32\make\x86_64-w64-mingw32_flags.gmk">
+      <Filter>micros\x86_64-w64-mingw32\make</Filter>
+    </None>
+    <None Include="target\micros\x86_64-w64-mingw32\make\x86_64-w64-mingw32_files.gmk">
+      <Filter>micros\x86_64-w64-mingw32\make</Filter>
+    </None>
+    <None Include="target\micros\x86_64-w64-mingw32\make\x86_64-w64-mingw32.ld">
+      <Filter>micros\x86_64-w64-mingw32\make</Filter>
+    </None>
+    <None Include="target\micros\stm32l100c\make\stm32l100c.ld">
+      <Filter>micros\stm32l100c\make</Filter>
+    </None>
+    <None Include="target\micros\stm32l100c\make\stm32l100c_files.gmk">
+      <Filter>micros\stm32l100c\make</Filter>
+    </None>
+    <None Include="target\micros\stm32l100c\make\stm32l100c_flags.gmk">
+      <Filter>micros\stm32l100c\make</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -320,21 +392,6 @@
     <ClCompile Include="target\micros\rx63n\startup\int_vect.cpp">
       <Filter>micros\rx63n\startup</Filter>
     </ClCompile>
-    <ClCompile Include="target\micros\pic32mx795fx\startup\crt0.cpp">
-      <Filter>micros\pic32mx795fx\startup</Filter>
-    </ClCompile>
-    <ClCompile Include="target\micros\pic32mx795fx\startup\crt0_init_ram.cpp">
-      <Filter>micros\pic32mx795fx\startup</Filter>
-    </ClCompile>
-    <ClCompile Include="target\micros\pic32mx795fx\startup\crt1.cpp">
-      <Filter>micros\pic32mx795fx\startup</Filter>
-    </ClCompile>
-    <ClCompile Include="target\micros\pic32mx795fx\startup\int_vect.cpp">
-      <Filter>micros\pic32mx795fx\startup</Filter>
-    </ClCompile>
-    <ClCompile Include="target\micros\pic32mx795fx\startup\config.cpp">
-      <Filter>micros\pic32mx795fx\startup</Filter>
-    </ClCompile>
     <ClCompile Include="target\micros\rl78\startup\option.cpp">
       <Filter>micros\rl78\startup</Filter>
     </ClCompile>
@@ -373,6 +430,54 @@
     </ClCompile>
     <ClCompile Include="target\micros\atmega2560\startup\int_vect.cpp">
       <Filter>micros\atmega2560\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32f446\startup\crt0.cpp">
+      <Filter>micros\stm32f446\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32f446\startup\crt0_init_ram.cpp">
+      <Filter>micros\stm32f446\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32f446\startup\crt1.cpp">
+      <Filter>micros\stm32f446\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32f446\startup\int_vect.cpp">
+      <Filter>micros\stm32f446\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\xtensa32\startup\crt0.cpp">
+      <Filter>micros\xtensa32\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\xtensa32\startup\crt0_init_ram.cpp">
+      <Filter>micros\xtensa32\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\xtensa32\startup\crt1.cpp">
+      <Filter>micros\xtensa32\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\xtensa32\startup\int_vect.cpp">
+      <Filter>micros\xtensa32\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\lpc11c24\startup\crt0.cpp">
+      <Filter>micros\lpc11c24\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\lpc11c24\startup\crt0_init_ram.cpp">
+      <Filter>micros\lpc11c24\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\lpc11c24\startup\crt1.cpp">
+      <Filter>micros\lpc11c24\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\lpc11c24\startup\int_vect.cpp">
+      <Filter>micros\lpc11c24\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32l100c\startup\crt0.cpp">
+      <Filter>micros\stm32l100c\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32l100c\startup\crt0_init_ram.cpp">
+      <Filter>micros\stm32l100c\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32l100c\startup\crt1.cpp">
+      <Filter>micros\stm32l100c\startup</Filter>
+    </ClCompile>
+    <ClCompile Include="target\micros\stm32l100c\startup\int_vect.cpp">
+      <Filter>micros\stm32l100c\startup</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

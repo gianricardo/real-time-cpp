@@ -1,5 +1,4 @@
-#
-#  Copyright Christopher Kormanyos 2007 - 2018.
+#  Copyright Christopher Kormanyos 2007 - 2019.
 #  Distributed under the Boost Software License,
 #  Version 1.0. (See accompanying file LICENSE_1_0.txt
 #  or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -9,28 +8,33 @@
 # compiler flags for the target architecture
 # ------------------------------------------------------------------------------
 
-GCC_VERSION   = 7.2.1
+GCC_VERSION   = 9.3.1
 GCC_TARGET    = arm-none-eabi
+GCC_PREFIX    = arm-none-eabi
 
-TGT_CFLAGS    = -O2                                                            \
+TGT_SUFFIX    = elf
+
+TGT_CFLAGS    = -Os                                                            \
                 -finline-functions                                             \
                 -finline-limit=32                                              \
-                -ffast-math                                                    \
                 -mcpu=cortex-m4                                                \
                 -mtune=cortex-m4                                               \
                 -mthumb                                                        \
                 -mfloat-abi=hard                                               \
                 -mfpu=fpv4-sp-d16                                              \
+                -ffast-math                                                    \
                 -mno-unaligned-access                                          \
                 -mno-long-calls
 
 TGT_CPPFLAGS  = -std=c++17
 
-TGT_INCLUDES  = -I$(PATH_APP)/util/STL                         \
-                -I$(PATH_APP)/util/STL_C++XX_stdfloat
+TGT_INCLUDES  = -I$(PATH_APP)/util/STL_C++XX_stdfloat                          \
+                -I$(PATH_APP)/util/STL
 
 TGT_AFLAGS    =
 
-TGT_LFLAGS    =
+TGT_LDFLAGS   = -nostdlib                                      \
+                -nostartfiles                                  \
+                -T $(LINKER_DEFINITION_FILE)
 
 IMAGE_FILE    = dummy.foo

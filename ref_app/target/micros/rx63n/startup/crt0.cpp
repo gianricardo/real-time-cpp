@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-//  Copyright Christopher Kormanyos 2007 - 2013.
+//  Copyright Christopher Kormanyos 2007 - 2020.
 //  Distributed under the Boost Software License,
 //  Version 1.0. (See accompanying file LICENSE_1_0.txt
 //  or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -29,7 +29,7 @@ void __my_startup()
   asm volatile("mov #__initial_stack_pointer, r0");
 
   // Load the address of the interrupt vector table.
-  asm volatile("mvtc #_vectors_begin, intb");
+  asm volatile("mvtc #__vectors_begin, intb");
 
   // Initialize the small data area pointer.
   // We will not use the small area data pointer.

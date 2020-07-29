@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-//  Copyright Christopher Kormanyos 2016 - 2018.
+//  Copyright Christopher Kormanyos 2014 - 2019.
 //  Distributed under the Boost Software License,
 //  Version 1.0. (See accompanying file LICENSE_1_0.txt
 //  or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -12,10 +12,6 @@
 
 #ifndef EXTENDED_COMPLEX_2016_02_22_
   #define EXTENDED_COMPLEX_2016_02_22_
-
-  #if defined(__GNUC__)
-    #pragma GCC system_header
-  #endif
 
   #if defined(_MSC_VER) && (_MSC_VER <= 1800)
     #define EXTENDED_COMPLEX_CONSTEXPR
@@ -1323,16 +1319,6 @@
     {
       return sinh(__my_z) / cosh(__my_z);
     }
-
-    #if defined(__GNUC__)
-    EXTENDED_COMPLEX_CONSTEXPR complex<float>       operator""if(long double imag_literal)        { return complex<float>      {0.0F, static_cast<float>      (imag_literal)}; }
-    EXTENDED_COMPLEX_CONSTEXPR complex<double>      operator""i (long double imag_literal)        { return complex<double>     {0.0,  static_cast<double>     (imag_literal)}; }
-    EXTENDED_COMPLEX_CONSTEXPR complex<long double> operator""il(long double imag_literal)        { return complex<long double>{0.0L, static_cast<long double>(imag_literal)}; }
-
-    EXTENDED_COMPLEX_CONSTEXPR complex<float>       operator""if(unsigned long long imag_literal) { return complex<float>      {0.0F, static_cast<float>      (imag_literal)}; }
-    EXTENDED_COMPLEX_CONSTEXPR complex<double>      operator""i (unsigned long long imag_literal) { return complex<double>     {0.0,  static_cast<double>     (imag_literal)}; }
-    EXTENDED_COMPLEX_CONSTEXPR complex<long double> operator""il(unsigned long long imag_literal) { return complex<long double>{0.0L, static_cast<long double>(imag_literal)}; }
-    #endif
   } // namespace extended_complex
 
   /*

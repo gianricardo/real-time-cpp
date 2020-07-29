@@ -232,6 +232,23 @@
       return result;
     }
 
+    template<typename bidirectional_input__iterator1,
+             typename bidirectional_output_iterator2>
+    bidirectional_output_iterator2 copy_backward(bidirectional_input__iterator1 first1,
+                                                 bidirectional_input__iterator1 last1,
+                                                 bidirectional_output_iterator2 last2)
+    {
+      while (first1 != last1)
+      {
+        --last1;
+        --last2;
+
+        *last2 = *last1;
+      }
+
+      return last2;
+    }
+
     template<typename input_iterator,
              typename output_iterator,
              typename unary_function_type>
@@ -557,6 +574,93 @@
       }
 
       return count_value;
+    }
+
+    template<typename forward_iterator,
+             typename value_type>
+    forward_iterator lower_bound(forward_iterator first,
+                                 forward_iterator last,
+                                 const value_type& value)
+    {
+      typename std::iterator_traits<forward_iterator>::difference_type count = std::distance(first, last);
+      typename std::iterator_traits<forward_iterator>::difference_type step;
+
+      while(count > 0)
+      {
+        forward_iterator it = first;
+
+        step = count / 2;
+        std::advance(it, step);
+
+        if(*it < value)
+        {
+          first  = ++it;
+          count -= step + 1;
+        }
+        else
+        {
+          count = step;
+        }
+      }
+
+      return first;
+    }
+
+    template<typename forward_iterator,
+             typename value_type,
+             typename binary_function_type>
+    forward_iterator lower_bound(forward_iterator first,
+                                 forward_iterator last,
+                                 const value_type& value,
+                                 binary_function_type binary_function)
+    {
+      typename std::iterator_traits<forward_iterator>::difference_type step;
+
+      typename std::iterator_traits<forward_iterator>::difference_type count =
+        std::distance(first,last);
+
+      while(count > 0)
+      {
+        forward_iterator it = first;
+        step = count / 2;
+        std::advance(it, step);
+
+        if(binary_function(*it, value))
+        {
+          first = ++it;
+          count -= step + 1;
+        }
+        else
+        {
+          count = step;
+        }
+      }
+
+      return first;
+    }
+
+    template<typename forward_iterator,
+             typename value_type>
+    bool binary_search(forward_iterator first,
+                       forward_iterator last,
+                       const value_type& value)
+    {
+      first = std::lower_bound(first, last, value);
+
+      return (!(first == last) && !(value < *first));
+    }
+
+    template<typename forward_iterator,
+             typename value_type,
+             typename binary_function_type>
+    bool binary_search(forward_iterator first,
+                       forward_iterator last,
+                       const value_type& value,
+                       binary_function_type binary_function)
+    {
+      first = std::lower_bound(first, last, value, binary_function);
+
+      return (!(first == last) && !(binary_function(value, *first)));
     }
 
     template<typename forward_iterator,

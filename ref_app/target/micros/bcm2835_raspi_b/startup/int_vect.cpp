@@ -62,7 +62,7 @@ namespace int_vect
 
     static_cast<void>(load_address);
 
-    const std::uint32_t my_load_address_zero = UINT32_C(0);
+    volatile std::uint8_t* my_load_address_zero = nullptr;
 
     // The data below have been extracted from the lower interrupt
     // vector table code that is implemented in "int_vect_table.s".
@@ -73,19 +73,19 @@ namespace int_vect
 
     static const std::uint8_t the_lower_interrupt_vector_table_data[64U] =
     {
-      UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U), UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U),
-      UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U), UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U),
-      UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U), UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U),
-      UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U), UINT8_C(0x18U), UINT8_C(0xF0U), UINT8_C(0x9FU), UINT8_C(0xE5U),
-      UINT8_C(0x00U), UINT8_C(0x84U), UINT8_C(0x00U), UINT8_C(0x00U), UINT8_C(0x40U), UINT8_C(0x80U), UINT8_C(0x00U), UINT8_C(0x00U),
-      UINT8_C(0x80U), UINT8_C(0x80U), UINT8_C(0x00U), UINT8_C(0x00U), UINT8_C(0xC0U), UINT8_C(0x80U), UINT8_C(0x00U), UINT8_C(0x00U),
-      UINT8_C(0x00U), UINT8_C(0x81U), UINT8_C(0x00U), UINT8_C(0x00U), UINT8_C(0x40U), UINT8_C(0x81U), UINT8_C(0x00U), UINT8_C(0x00U),
-      UINT8_C(0x80U), UINT8_C(0x81U), UINT8_C(0x00U), UINT8_C(0x00U), UINT8_C(0xC0U), UINT8_C(0x81U), UINT8_C(0x00U), UINT8_C(0x00U),
+      UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5), UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5),
+      UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5), UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5),
+      UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5), UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5),
+      UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5), UINT8_C(0x18), UINT8_C(0xF0), UINT8_C(0x9F), UINT8_C(0xE5),
+      UINT8_C(0x00), UINT8_C(0x84), UINT8_C(0x00), UINT8_C(0x00), UINT8_C(0x40), UINT8_C(0x80), UINT8_C(0x00), UINT8_C(0x00),
+      UINT8_C(0x80), UINT8_C(0x80), UINT8_C(0x00), UINT8_C(0x00), UINT8_C(0xC0), UINT8_C(0x80), UINT8_C(0x00), UINT8_C(0x00),
+      UINT8_C(0x00), UINT8_C(0x81), UINT8_C(0x00), UINT8_C(0x00), UINT8_C(0x40), UINT8_C(0x81), UINT8_C(0x00), UINT8_C(0x00),
+      UINT8_C(0x80), UINT8_C(0x81), UINT8_C(0x00), UINT8_C(0x00), UINT8_C(0xC0), UINT8_C(0x81), UINT8_C(0x00), UINT8_C(0x00),
     };
 
     // Perform the copy of the lower interrupt vector table data.
     std::copy(std::begin(the_lower_interrupt_vector_table_data),
               std::end  (the_lower_interrupt_vector_table_data),
-              reinterpret_cast<volatile std::uint8_t*>(my_load_address_zero));
+              my_load_address_zero);
   }
 }
